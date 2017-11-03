@@ -20,3 +20,24 @@ puts train111
 puts train80B
 puts train610
 
+north_trains = []
+east_trains = []
+
+# find trains in certain direction
+def train_direction(trains, direction)
+	new_trains=[]
+	trains.each do |alltrains|
+		if alltrains[:direction] == direction
+			new_trains << alltrains[:train]
+		end
+	end
+	return new_trains
+end	
+ north_trains = train_direction(trains,"north")
+ east_trains = train_direction(trains,"east")
+ puts north_trains
+ puts east_trains
+
+# first departure time
+trains[0][:first_departure_time] = 12
+puts trains[0]
